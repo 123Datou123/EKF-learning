@@ -2,9 +2,11 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
 
 def load_predictions(file_path):
-    return np.loadtxt(file_path, delimiter=',')
+    data = pd.read_csv(file_path)
+    return data.values  # 转换为 numpy 数组
 
 def plot_states(recorded_states, title):
     time_steps = range(len(recorded_states))

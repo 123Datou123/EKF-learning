@@ -35,7 +35,6 @@ data = generate_sir_data(days, S0, I0, R0, beta, gamma, dt)
 # 保存数据到CSV文件
 with open('observations.csv', mode='w', newline='') as file:
     writer = csv.writer(file)
-    writer.writerow(["S", "I", "R"])  # 写入表头
     for row in data:
         writer.writerow(row)
 
